@@ -33,8 +33,9 @@ jobs:
           # JMeter test plan to execute
           test-plan-path: "./spotify.jmx"
           args: "-q test.properties" # optional
+          
       - name: Upload Results
-        uses: actions/upload-artifact@v5.6.2
+        uses: actions/upload-artifact@v3
         with:
           name: jmeter-results
           path: result.jtl
