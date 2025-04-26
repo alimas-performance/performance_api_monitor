@@ -25,6 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      - name: Create reports directory
+        run: mkdir reports
+
       - name: PerfAction for JMeter
       # You may pin to the exact commit or the version.
       # uses: QAInsights/PerfAction@d16221318a6d261b1546b9dec9c0bb1739e3d480
@@ -41,9 +44,6 @@ jobs:
           name: 'JMeter Results'
           path: './results.jtl'
           if-no-files-found: 'error'
-
-      - name: Create reports directory
-        run: mkdir reports
 
       - name: Upload HTML Reports
         uses: actions/upload-artifact@v4
