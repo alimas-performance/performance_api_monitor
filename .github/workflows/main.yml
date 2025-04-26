@@ -35,8 +35,8 @@ jobs:
           args: "-q test.properties -l results.jtl" # optional
           
       - name: Upload artifact
-        uses: echapmanFromBunnings/upload-artifact@3.0
+        uses: actions/upload-artifact@v4
         with:
           name: 'JMeter Results'
           path: './results.jtl'
-          if-no-files-found: 'error' # Optional
+          if-no-files-found: 'error'
