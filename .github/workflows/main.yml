@@ -32,11 +32,11 @@ jobs:
         with:
           # JMeter test plan to execute
           test-plan-path: "./spotify.jmx"
-          args: "-q test.properties" # optional
+          args: "-q test.properties -l results.jtl" # optional
           
-      - name: Upload Results
-        uses: actions/upload-artifact@v3
+      - name: Upload artifact
+        uses: echapmanFromBunnings/upload-artifact@3.0
         with:
-          name: jmeter-results
-          path: result.jtl
-          if-no-files-found: error
+          name: 'JMeter Results'
+          path: './results.jtl'
+          if-no-files-found: 'error' # Optional
