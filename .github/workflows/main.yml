@@ -33,7 +33,7 @@ jobs:
           # JMeter test plan to execute
           test-plan-path: "./spotify.jmx"
           results-file: "./results.jtl"
-          args: "-q test.properties" # optional
+          args: "-JapiClient=${{ secrets.apiClient }} -JapiSecret=${{ secrets.apiSecret }}" # optional
           
       - name: Upload artifact
         uses: actions/upload-artifact@v4
