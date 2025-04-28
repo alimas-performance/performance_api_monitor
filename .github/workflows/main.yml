@@ -42,6 +42,7 @@ jobs:
         uses: alimas-performance/jmeter_markdown_reporter@v1.4
         with:
           jtl-file: ./results.jtl
+          results-folder: reports
           args: "./results.jtl"
       
       - name: Upload artifact
