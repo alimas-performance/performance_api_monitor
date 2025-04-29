@@ -39,7 +39,7 @@ jobs:
           args: "-JapiClient=${{ secrets.apiClient }} -JapiSecret=${{ secrets.apiSecret }} -e -o ./reports/html/" # optional
 
       - name: JMeter Markdown reporter
-        uses: alimas-performance/jmeter_markdown_reporter@v1.4.alpha-3
+        uses: alimas-performance/jmeter_markdown_reporter@v1.4.alpha-4
         with:
           jtl-file: ./results.jtl
           results-folder: reports
