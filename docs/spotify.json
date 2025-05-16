@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  title: apiMonitor Demo
+  version: 1.0.0
+  description: ''
+servers:
+  - url: accounts.spotify.com
+  - url: api.spotify.com
+paths:
+  /api/token:
+    parameters: []
+    post:
+      summary: Get_Token
+      parameters:
+        - name: Content-Type
+          in: header
+          required: false
+          example: application/x-www-form-urlencoded
+          schema:
+            type: string
+      responses:
+        "201":
+          description: something
+  /v1/users/{playlistId}/playlists:
+    parameters:
+      - name: playlistId
+        in: path
+        description: ID of playlist to get
+        required: true
+        schema:
+          type: string
+    get:
+      summary: get_playlist
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          example: '5'
+          schema:
+            type: integer
+        - name: Content-Type
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+      responses:
+        "200":
+          description: something
+  /v1/tracks/{trackId}:
+    parameters:
+      - name: trackId
+        in: path
+        description: ID of track to list
+        required: true
+        schema:
+          type: string
+    get:
+      summary: get_track
+      parameters:
+        - name: Content-Type
+          in: header
+          required: false
+          example: application/json
+          schema:
+            type: string
+      responses:
+        "200":
+          description: something
